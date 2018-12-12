@@ -1161,7 +1161,8 @@ a {
 }
 
 a:hover {
-    color: var(--secondary-color);
+    color: var(--primary-color);
+    text-decoration: underline;
 }
 
 img {
@@ -1309,6 +1310,20 @@ p.meta-text {
     color: var(--body-color);
 }
 
+.printer-friendly {
+    font-size: var(--size-small);
+}
+
+.printer-friendly img {
+    box-shadow: 0 0 1rem rgba(128, 128, 128, 0.25);
+    margin-bottom: 1rem;
+}
+
+.printer-friendly img:hover {
+    box-shadow: 0 0 0 rgba(128, 128, 128, 0);
+    border: 1px solid rgba(128, 128, 128, 0.25);
+}
+
 /* Medium. Above 48rem (768px) */
 @media only screen and (min-width: 48rem) {
     .wrapper {
@@ -1371,12 +1386,19 @@ p.meta-text {
 .btn-hover {
     box-shadow: 0 0 1rem #999;
     color: var(--secondary-color);
+    text-decoration: none;
 }
 
 .btn:active,
 .btn-active {
-    border: 2px solid var(--primary-color-1);
-    color: var(--primary-color-2);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn:focus,
+.btn-focus {
+    border: 3px solid var(--primary-color);
+    color: var(--primary-color);
 }
 
 /* ==========================================================================
@@ -1974,7 +1996,7 @@ summary:hover {
 }
 
 summary::-webkit-details-marker {
-    color: var(--primary-color-1);
+    color: var(--primary-color);
     font-size: 65%;
     top: -0.2rem;
     display: inline-block;
@@ -2008,6 +2030,8 @@ details[open] summary {
 
 /* Above 64rem (1024px) */
 @media only screen and (min-width: 64rem) {
+
+    summary,
     summary:hover {
         font-size: var(--size-xxl);
     }
